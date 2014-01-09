@@ -47,7 +47,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)\..\sws-extension;&quot;$(REAPER_DIR)&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)..\WDL\WDL;$(SolutionDir)..\WDL\WDL\zlib;$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_AFXEXT;_USRDLL;REMOVEDOUBLETRIGGER_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -129,7 +129,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)..\WDL\WDL;$(SolutionDir)..\WDL\WDL\zlib;$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_WINDLL;_AFXDLL;_AFXEXT;REMOVEDOUBLETRIGGER_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -138,7 +138,7 @@
 				PrecompiledHeaderThrough="preheader.h"
 				WarningLevel="3"
 				DebugInformationFormat="3"
-				ShowIncludes="false"
+				ShowIncludes="true"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -215,6 +215,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="$(SolutionDir)..\WDL\WDL;$(SolutionDir)..\WDL\WDL\zlib;$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_AFXEXT;_USRDLL;REMOVEDOUBLETRIGGER_EXPORTS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -298,7 +299,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)..\WDL\WDL;$(SolutionDir)..\WDL\WDL\zlib;$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_WINDLL;_AFXDLL;_AFXEXT;REMOVEDOUBLETRIGGER_EXPORTS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"

@@ -9,5 +9,6 @@ enum RemoveDoubleTriggerMode {
 
 RprMidiTake* GetActiveMidiMidiTake();
 int CountSelectedNotes();
+void SelectShortNotes(int maxNoteLength);
 void UnselectAllNotes();
 void RemoveDoubleTriggers(int noteLength, RemoveDoubleTriggerMode removeDoubleTriggerMode, bool previewJoinedNotes);

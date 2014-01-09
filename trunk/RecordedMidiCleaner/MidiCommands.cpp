@@ -31,8 +31,30 @@ int CountSelectedNotes()
 			bool selected =  FNG_GetMidiNoteIntProperty(currNote, "SELECTED");
 			if (selected) ++selectedCount;
 		}
+		FNG_FreeMidiTake(midiTake);
 	}
 	return selectedCount;
+}
+
+void SelectShortNotes(int maxNoteLength)
+{
+	UnselectAllNotes();
+
+	RprMidiTake* midiTake = GetActiveMidiMidiTake();
+	if (midiTake)
+	{
+		Undo_BeginBlock();
+		int noteCount = FNG_CountMidiNotes(midiTake);
+		for (int i = 0; i < noteCount; ++i) 
+		{
+			RprMidiNote* currNote=FNG_GetMidiNote(midiTake, i);
+			int length = FNG_GetMidiNoteIntProperty(currNote, "LENGTH");
+			if (length <= maxNoteLength)
+				FNG_SetMidiNoteIntProperty(currNote, "SELECTED", TRUE);
+		}
+		Undo_EndBlock("Select short notes", UNDO_STATE_ITEMS);
+		FNG_FreeMidiTake(midiTake); // "Commit changes to MIDI take and free allocated memory"
+	}
 }
 
 void UnselectAllNotes()
@@ -43,12 +65,14 @@ void UnselectAllNotes()
 
 	if (midiTake)
 	{
+		Undo_BeginBlock();
 		int noteCount = FNG_CountMidiNotes(midiTake);
 		for (int i = 0; i < noteCount; ++i) 
 		{
 			RprMidiNote* currNote=FNG_GetMidiNote(midiTake, i);
 			FNG_SetMidiNoteIntProperty(currNote, "SELECTED", FALSE);
 		}
+		Undo_EndBlock("Unselect all notes", UNDO_STATE_ITEMS);
 		FNG_FreeMidiTake(midiTake); // "Commit changes to MIDI take and free allocated memory"
 	}
 }

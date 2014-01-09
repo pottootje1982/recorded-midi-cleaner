@@ -51,7 +51,7 @@
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="4"
-				ShowIncludes="true"
+				ShowIncludes="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -115,7 +115,7 @@
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
-				ShowIncludes="true"
+				ShowIncludes="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -179,6 +179,7 @@
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
+				ShowIncludes="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -243,6 +244,7 @@
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
+				ShowIncludes="false"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"

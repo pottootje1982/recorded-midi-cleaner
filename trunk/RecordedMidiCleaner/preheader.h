@@ -38,14 +38,6 @@
 
 #define STRICT
 #ifdef _WIN32
-//#include <winsock2.h> // must be inculded before windows.h, see OscPkt/udp.h
-//#include <windows.h>
-//#include <windowsx.h>
-//#include <process.h>
-//#include <shlwapi.h>
-//#include <shlobj.h>
-//#include <crtdbg.h>
-//#include <commctrl.h>
 #else
 #include "../WDL/swell/swell.h"
 #include <sys/time.h>
