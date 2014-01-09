@@ -44,7 +44,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)..\..\sws-extension;&quot;$(REAPER_DIR)&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -108,7 +108,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)..\..\sws-extension;&quot;$(REAPER_DIR)&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -173,7 +173,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="$(SolutionDir)..\..\sws-extension;&quot;$(REAPER_DIR)&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="2"
@@ -237,7 +237,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="$(SolutionDir)..\..\sws-extension;&quot;$(REAPER_DIR)&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)..\sws-extension;&quot;$(REAPER_DIR)&quot;"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="2"
@@ -470,7 +470,7 @@
 			Name="WDL"
 			>
 			<File
-				RelativePath="..\WDL\projectcontext.cpp"
+				RelativePath="..\..\WDL\projectcontext.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -506,7 +506,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\WDL\sha.cpp"
+				RelativePath="..\..\WDL\sha.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -542,7 +542,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\WDL\win32_utf8.c"
+				RelativePath="..\..\WDL\win32_utf8.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
