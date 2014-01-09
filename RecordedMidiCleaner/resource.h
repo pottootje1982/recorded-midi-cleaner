@@ -9,6 +9,8 @@
 #define IDC_PREVIEW_BUTTON              1007
 #define IDC_MIN_NOTE_LENGTH_SLIDER      1008
 #define IDC_NR_NOTES_SELECTED           1009
+#define IDC_PREVIEW_BUTTON2             1010
+#define IDC_SELECT_SHORT_NOTES_BUTTON   1010
 #define IDC_BUTTON1                     3000
 
 // Next default values for new objects

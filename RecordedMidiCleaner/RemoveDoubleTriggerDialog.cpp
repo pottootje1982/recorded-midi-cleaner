@@ -25,20 +25,28 @@ BOOL CRemoveDoubleTriggerDialog::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 	minNoteLengthStr = "250";
-	char selectedNotesArray[128];
-	itoa(CountSelectedNotes(), selectedNotesArray, 10);
-	selectedNotesStr = selectedNotesArray;
+
 	joinLeadingNotesButton.SetCheck(BST_CHECKED);
 	joinTrailingNotesButton.SetCheck(BST_CHECKED);
 
 	minNoteLengthSlider.SetRange(0, 1000);
 	minNoteLengthSlider.SetTicFreq(10);
 	
+	UpdateSelectedNotes();
+
 	UpdateData(FALSE);
 
 	OnEnChangeMinNoteLengthEdit();
 
 	return TRUE;
+}
+
+void CRemoveDoubleTriggerDialog::UpdateSelectedNotes()
+{
+	char selectedNotesArray[128];
+	itoa(CountSelectedNotes(), selectedNotesArray, 10);
+	selectedNotesStr = selectedNotesArray;
+	UpdateData(FALSE);
 }
 
 void CRemoveDoubleTriggerDialog::DoDataExchange(CDataExchange* pDX)
@@ -57,6 +65,8 @@ BEGIN_MESSAGE_MAP(CRemoveDoubleTriggerDialog, CDialog)
 	ON_BN_CLICKED(IDC_PREVIEW_BUTTON, &CRemoveDoubleTriggerDialog::OnBnClickedPreviewButton)
 	ON_EN_CHANGE(IDC_MIN_NOTE_LENGTH_EDIT, &CRemoveDoubleTriggerDialog::OnEnChangeMinNoteLengthEdit)
 	ON_NOTIFY(NM_RELEASEDCAPTURE, IDC_MIN_NOTE_LENGTH_SLIDER, &CRemoveDoubleTriggerDialog::OnNMReleasedcaptureMinNoteLengthSlider)
+	ON_BN_CLICKED(IDC_SELECT_SHORT_NOTES_BUTTON, &CRemoveDoubleTriggerDialog::OnBnClickedSelectShortNotesButton)
+	ON_NOTIFY(TRBN_THUMBPOSCHANGING, IDC_MIN_NOTE_LENGTH_SLIDER, &CRemoveDoubleTriggerDialog::OnTRBNThumbPosChangingMinNoteLengthSlider)
 END_MESSAGE_MAP()
 
 
@@ -89,6 +99,7 @@ void CRemoveDoubleTriggerDialog::JoinNotes(bool preview)
 		RemoveDoubleTriggers(noteLength, JOIN_LEADING, preview);
 	if (joinTrailingNotes)
 		RemoveDoubleTriggers(noteLength, JOIN_TRAILING, preview);
+	UpdateSelectedNotes();
 }
 
 void CRemoveDoubleTriggerDialog::OnEnChangeMinNoteLengthEdit()
@@ -108,3 +119,19 @@ void CRemoveDoubleTriggerDialog::OnNMReleasedcaptureMinNoteLengthSlider(NMHDR *p
 	UpdateData();
 }
 
+
+void CRemoveDoubleTriggerDialog::OnBnClickedSelectShortNotesButton()
+{
+	int noteLength = atoi(minNoteLengthStr);
+	SelectShortNotes(noteLength);
+	UpdateSelectedNotes();
+}
+
+void CRemoveDoubleTriggerDialog::OnTRBNThumbPosChangingMinNoteLengthSlider(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// This feature requires Windows Vista or greater.
+	// The symbol _WIN32_WINNT must be >= 0x0600.
+	NMTRBTHUMBPOSCHANGING *pNMTPC = reinterpret_cast<NMTRBTHUMBPOSCHANGING *>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}

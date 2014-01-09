@@ -18,6 +18,7 @@ public:
 
 private:
 	void JoinNotes(bool preview);
+	void UpdateSelectedNotes();
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
@@ -35,4 +36,6 @@ public:
 	afx_msg void OnBnClickedPreviewButton();
 	afx_msg void OnEnChangeMinNoteLengthEdit();
 	afx_msg void OnNMReleasedcaptureMinNoteLengthSlider(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnBnClickedSelectShortNotesButton();
+	afx_msg void OnTRBNThumbPosChangingMinNoteLengthSlider(NMHDR *pNMHDR, LRESULT *pResult);
 };
