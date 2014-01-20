@@ -57,7 +57,7 @@ extern "C"
 
 			ERR_RETURN("Exiting Reaper.\n")
 		}
-		
+
 		// Extension DLL one-time initialization
 		AfxWinInit(::GetModuleHandle(NULL), NULL, ::GetCommandLine(), 0);
 

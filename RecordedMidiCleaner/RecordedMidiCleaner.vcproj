@@ -154,7 +154,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comctl32.lib $(SolutionDir)\..\sws-extension\lib\tag64.lib shlwapi.lib wsock32.lib"
 				LinkIncremental="2"
 				ModuleDefinitionFile=".\RecordedMidiCleaner.def"
 				GenerateDebugInformation="true"
@@ -328,7 +327,7 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				EntryPointSymbol="ReaperPluginEntry"
+				EntryPointSymbol=""
 				TargetMachine="17"
 			/>
 			<Tool
